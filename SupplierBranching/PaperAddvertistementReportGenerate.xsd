@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PaperAddvertistementReportGenerate" targetNamespace="http://tempuri.org/PaperAddvertistementReportGenerate.xsd" xmlns:mstns="http://tempuri.org/PaperAddvertistementReportGenerate.xsd" xmlns="http://tempuri.org/PaperAddvertistementReportGenerate.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SuppliesBranchConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SuppliesBranchConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SupplierBranching.Properties.Settings.GlobalReference.Default.SuppliesBranchConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SuppliesBranchConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SuppliesBranchConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SupplierBranching.Properties.Settings.GlobalReference.Default.SuppliesBranchConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PaperAddTableAdapter" GeneratorDataComponentClassName="PaperAddTableAdapter" Name="PaperAdd" UserDataComponentName="PaperAddTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SuppliesBranchConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        p.Heading, p.Cname, p.MadeDate, p.PaymentStatus, p.RegistrationEndDate, p.RegistrationEndTime, p.RegistrationStartDate, p.RegistrationStartTime, p.ShouldResponseDate, p.TenderName, p.TenderNo, 
+                         pa.Item, pa.Qty
+FROM            PaperAdd AS p INNER JOIN
+                         PaperAddItems AS pa ON p.Paperid = pa.PaperId
+WHERE        (pa.PaperId =
+                             (SELECT        MAX(Paperid) AS Expr1
+                               FROM            PaperAdd))</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Heading" DataSetColumn="Heading" />
+              <Mapping SourceColumn="Cname" DataSetColumn="Cname" />
+              <Mapping SourceColumn="TenderName" DataSetColumn="TenderName" />
+              <Mapping SourceColumn="TenderNo" DataSetColumn="TenderNo" />
+              <Mapping SourceColumn="PaymentStatus" DataSetColumn="PaymentStatus" />
+              <Mapping SourceColumn="ShouldResponseDate" DataSetColumn="ShouldResponseDate" />
+              <Mapping SourceColumn="MadeDate" DataSetColumn="MadeDate" />
+              <Mapping SourceColumn="RegistrationEndDate" DataSetColumn="RegistrationEndDate" />
+              <Mapping SourceColumn="RegistrationStartDate" DataSetColumn="RegistrationStartDate" />
+              <Mapping SourceColumn="RegistrationStartTime" DataSetColumn="RegistrationStartTime" />
+              <Mapping SourceColumn="RegistrationEndTime" DataSetColumn="RegistrationEndTime" />
+              <Mapping SourceColumn="Item" DataSetColumn="Item" />
+              <Mapping SourceColumn="Qty" DataSetColumn="Qty" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PaperAddItemsTableAdapter" GeneratorDataComponentClassName="PaperAddItemsTableAdapter" Name="PaperAddItems" UserDataComponentName="PaperAddItemsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SuppliesBranchConnectionString (Settings)" DbObjectName="SuppliesBranch.dbo.PaperAddItems" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[PaperAddItems] WHERE (([Cid] = @Original_Cid) AND ([Id] = @Original_Id) AND ([PaperId] = @Original_PaperId) AND ([Item] = @Original_Item) AND ([Qty] = @Original_Qty) AND ([Pid] = @Original_Pid))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Cid" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Cid" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_PaperId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PaperId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Item" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Item" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_Qty" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Qty" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Pid" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Pid" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[PaperAddItems] ([Cid], [PaperId], [Item], [Qty], [Pid]) VALUES (@Cid, @PaperId, @Item, @Qty, @Pid);
+SELECT Cid, Id, PaperId, Item, Qty, Pid FROM PaperAddItems WHERE (Id = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Cid" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Cid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@PaperId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PaperId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Item" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Item" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Qty" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Qty" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Pid" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Pid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Cid, Id, PaperId, Item, Qty, Pid FROM dbo.PaperAddItems</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[PaperAddItems] SET [Cid] = @Cid, [PaperId] = @PaperId, [Item] = @Item, [Qty] = @Qty, [Pid] = @Pid WHERE (([Cid] = @Original_Cid) AND ([Id] = @Original_Id) AND ([PaperId] = @Original_PaperId) AND ([Item] = @Original_Item) AND ([Qty] = @Original_Qty) AND ([Pid] = @Original_Pid));
+SELECT Cid, Id, PaperId, Item, Qty, Pid FROM PaperAddItems WHERE (Id = @Id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Cid" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Cid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@PaperId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PaperId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Item" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Item" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Qty" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Qty" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Pid" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Pid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Cid" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Cid" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_PaperId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PaperId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Item" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Item" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_Qty" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Qty" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Pid" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Pid" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Id" ColumnName="Id" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Cid" DataSetColumn="Cid" />
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="PaperId" DataSetColumn="PaperId" />
+              <Mapping SourceColumn="Item" DataSetColumn="Item" />
+              <Mapping SourceColumn="Qty" DataSetColumn="Qty" />
+              <Mapping SourceColumn="Pid" DataSetColumn="Pid" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="PaperAddvertistementReportGenerate" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="PaperAddvertistementReportGenerate" msprop:Generator_UserDSName="PaperAddvertistementReportGenerate">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PaperAdd" msprop:Generator_TableClassName="PaperAddDataTable" msprop:Generator_TableVarName="tablePaperAdd" msprop:Generator_RowChangedName="PaperAddRowChanged" msprop:Generator_TablePropName="PaperAdd" msprop:Generator_RowDeletingName="PaperAddRowDeleting" msprop:Generator_RowChangingName="PaperAddRowChanging" msprop:Generator_RowEvHandlerName="PaperAddRowChangeEventHandler" msprop:Generator_RowDeletedName="PaperAddRowDeleted" msprop:Generator_RowClassName="PaperAddRow" msprop:Generator_UserTableName="PaperAdd" msprop:Generator_RowEvArgName="PaperAddRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Heading" msprop:Generator_ColumnVarNameInTable="columnHeading" msprop:Generator_ColumnPropNameInRow="Heading" msprop:Generator_ColumnPropNameInTable="HeadingColumn" msprop:Generator_UserColumnName="Heading">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cname" msprop:Generator_ColumnVarNameInTable="columnCname" msprop:Generator_ColumnPropNameInRow="Cname" msprop:Generator_ColumnPropNameInTable="CnameColumn" msprop:Generator_UserColumnName="Cname">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TenderName" msprop:Generator_ColumnVarNameInTable="columnTenderName" msprop:Generator_ColumnPropNameInRow="TenderName" msprop:Generator_ColumnPropNameInTable="TenderNameColumn" msprop:Generator_UserColumnName="TenderName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TenderNo" msprop:Generator_ColumnVarNameInTable="columnTenderNo" msprop:Generator_ColumnPropNameInRow="TenderNo" msprop:Generator_ColumnPropNameInTable="TenderNoColumn" msprop:Generator_UserColumnName="TenderNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PaymentStatus" msprop:Generator_ColumnVarNameInTable="columnPaymentStatus" msprop:Generator_ColumnPropNameInRow="PaymentStatus" msprop:Generator_ColumnPropNameInTable="PaymentStatusColumn" msprop:Generator_UserColumnName="PaymentStatus" type="xs:decimal" />
+              <xs:element name="ShouldResponseDate" msprop:Generator_ColumnVarNameInTable="columnShouldResponseDate" msprop:Generator_ColumnPropNameInRow="ShouldResponseDate" msprop:Generator_ColumnPropNameInTable="ShouldResponseDateColumn" msprop:Generator_UserColumnName="ShouldResponseDate" type="xs:dateTime" />
+              <xs:element name="MadeDate" msprop:Generator_ColumnVarNameInTable="columnMadeDate" msprop:Generator_ColumnPropNameInRow="MadeDate" msprop:Generator_ColumnPropNameInTable="MadeDateColumn" msprop:Generator_UserColumnName="MadeDate" type="xs:dateTime" />
+              <xs:element name="RegistrationEndDate" msprop:Generator_ColumnVarNameInTable="columnRegistrationEndDate" msprop:Generator_ColumnPropNameInRow="RegistrationEndDate" msprop:Generator_ColumnPropNameInTable="RegistrationEndDateColumn" msprop:Generator_UserColumnName="RegistrationEndDate" type="xs:dateTime" />
+              <xs:element name="RegistrationStartDate" msprop:Generator_ColumnVarNameInTable="columnRegistrationStartDate" msprop:Generator_ColumnPropNameInRow="RegistrationStartDate" msprop:Generator_ColumnPropNameInTable="RegistrationStartDateColumn" msprop:Generator_UserColumnName="RegistrationStartDate" type="xs:dateTime" />
+              <xs:element name="RegistrationStartTime" msprop:Generator_ColumnVarNameInTable="columnRegistrationStartTime" msprop:Generator_ColumnPropNameInRow="RegistrationStartTime" msprop:Generator_ColumnPropNameInTable="RegistrationStartTimeColumn" msprop:Generator_UserColumnName="RegistrationStartTime">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RegistrationEndTime" msprop:Generator_ColumnVarNameInTable="columnRegistrationEndTime" msprop:Generator_ColumnPropNameInRow="RegistrationEndTime" msprop:Generator_ColumnPropNameInTable="RegistrationEndTimeColumn" msprop:Generator_UserColumnName="RegistrationEndTime">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Item" msprop:Generator_ColumnVarNameInTable="columnItem" msprop:Generator_ColumnPropNameInRow="Item" msprop:Generator_ColumnPropNameInTable="ItemColumn" msprop:Generator_UserColumnName="Item">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Qty" msprop:Generator_ColumnVarNameInTable="columnQty" msprop:Generator_ColumnPropNameInRow="Qty" msprop:Generator_ColumnPropNameInTable="QtyColumn" msprop:Generator_UserColumnName="Qty" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PaperAddItems" msprop:Generator_TableClassName="PaperAddItemsDataTable" msprop:Generator_TableVarName="tablePaperAddItems" msprop:Generator_RowChangedName="PaperAddItemsRowChanged" msprop:Generator_TablePropName="PaperAddItems" msprop:Generator_RowDeletingName="PaperAddItemsRowDeleting" msprop:Generator_RowChangingName="PaperAddItemsRowChanging" msprop:Generator_RowEvHandlerName="PaperAddItemsRowChangeEventHandler" msprop:Generator_RowDeletedName="PaperAddItemsRowDeleted" msprop:Generator_RowClassName="PaperAddItemsRow" msprop:Generator_UserTableName="PaperAddItems" msprop:Generator_RowEvArgName="PaperAddItemsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cid" msprop:Generator_ColumnVarNameInTable="columnCid" msprop:Generator_ColumnPropNameInRow="Cid" msprop:Generator_ColumnPropNameInTable="CidColumn" msprop:Generator_UserColumnName="Cid" type="xs:int" />
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="PaperId" msprop:Generator_ColumnVarNameInTable="columnPaperId" msprop:Generator_ColumnPropNameInRow="PaperId" msprop:Generator_ColumnPropNameInTable="PaperIdColumn" msprop:Generator_UserColumnName="PaperId" type="xs:int" />
+              <xs:element name="Item" msprop:Generator_ColumnVarNameInTable="columnItem" msprop:Generator_ColumnPropNameInRow="Item" msprop:Generator_ColumnPropNameInTable="ItemColumn" msprop:Generator_UserColumnName="Item">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Qty" msprop:Generator_ColumnVarNameInTable="columnQty" msprop:Generator_ColumnPropNameInRow="Qty" msprop:Generator_ColumnPropNameInTable="QtyColumn" msprop:Generator_UserColumnName="Qty" type="xs:decimal" />
+              <xs:element name="Pid" msprop:Generator_ColumnVarNameInTable="columnPid" msprop:Generator_ColumnPropNameInRow="Pid" msprop:Generator_ColumnPropNameInTable="PidColumn" msprop:Generator_UserColumnName="Pid" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:PaperAddItems" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

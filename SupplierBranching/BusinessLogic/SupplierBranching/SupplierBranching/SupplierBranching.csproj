@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3653E8C5-B09C-46B0-A3BA-BDAC2365118B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SupplierBranching</RootNamespace>
+    <AssemblyName>SupplierBranching</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddItemPaperAdvertistment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddItemPaperAdvertistment.Designer.cs">
+      <DependentUpon>AddItemPaperAdvertistment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel.Designer.cs">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategoriProcumentReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoriProcumentReport.Designer.cs">
+      <DependentUpon>CategoriProcumentReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryProcurement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoryProcurement.Designer.cs">
+      <DependentUpon>CategoryProcurement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompanyRegistration.Designer.cs">
+      <DependentUpon>CompanyRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaperAdvertisment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaperAdvertisment.Designer.cs">
+      <DependentUpon>PaperAdvertisment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaperAdvertistmentReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaperAdvertistmentReport.Designer.cs">
+      <DependentUpon>PaperAdvertistmentReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcumentItemEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcumentItemEdit.Designer.cs">
+      <DependentUpon>ProcumentItemEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcumentPlanReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcumentPlanReport.Designer.cs">
+      <DependentUpon>ProcumentPlanReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcumentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcumentView.Designer.cs">
+      <DependentUpon>ProcumentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcurementItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcurementItem.Designer.cs">
+      <DependentUpon>ProcurementItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procuremnt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procuremnt.Designer.cs">
+      <DependentUpon>Procuremnt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterPerson.Designer.cs">
+      <DependentUpon>RegisterPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReqestView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReqestView.Designer.cs">
+      <DependentUpon>ReqestView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Request.Designer.cs">
+      <DependentUpon>Request.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RequestCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequestCategory.Designer.cs">
+      <DependentUpon>RequestCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RequestItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequestItem.Designer.cs">
+      <DependentUpon>RequestItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sections.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sections.Designer.cs">
+      <DependentUpon>Sections.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddItemPaperAdvertistment.resx">
+      <DependentUpon>AddItemPaperAdvertistment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel.resx">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoriProcumentReport.resx">
+      <DependentUpon>CategoriProcumentReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoryProcurement.resx">
+      <DependentUpon>CategoryProcurement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompanyRegistration.resx">
+      <DependentUpon>CompanyRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaperAdvertisment.resx">
+      <DependentUpon>PaperAdvertisment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaperAdvertistmentReport.resx">
+      <DependentUpon>PaperAdvertistmentReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcumentItemEdit.resx">
+      <DependentUpon>ProcumentItemEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcumentPlanReport.resx">
+      <DependentUpon>ProcumentPlanReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcumentView.resx">
+      <DependentUpon>ProcumentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcurementItem.resx">
+      <DependentUpon>ProcurementItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procuremnt.resx">
+      <DependentUpon>Procuremnt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="RegisterPerson.resx">
+      <DependentUpon>RegisterPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="ReqestView.resx">
+      <DependentUpon>ReqestView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Request.resx">
+      <DependentUpon>Request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RequestCategory.resx">
+      <DependentUpon>RequestCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RequestItem.resx">
+      <DependentUpon>RequestItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sections.resx">
+      <DependentUpon>Sections.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet3.xsc">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet3.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet3.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet3.xss">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet4.xsc">
+      <DependentUpon>DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet4.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet4.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet4.xss">
+      <DependentUpon>DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
+      <Project>{d51c3262-6f48-47e8-a23e-fbc8478a0c20}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{9a9d68ef-b543-4fc1-a226-e4ba36beed7e}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

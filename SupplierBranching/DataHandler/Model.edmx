@@ -1,0 +1,490 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SuppliesBranchModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CategoryTbl">
+          <Key>
+            <PropertyRef Name="Cid" />
+          </Key>
+          <Property Name="Cid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CompanyRegistraion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="PaperId" Type="int" Nullable="false" />
+          <Property Name="CompanyRegistrationNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="400" Nullable="false" />
+          <Property Name="RegistrationDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PaperAdd">
+          <Key>
+            <PropertyRef Name="Paperid" />
+          </Key>
+          <Property Name="Heading" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Cid" Type="int" Nullable="false" />
+          <Property Name="Paperid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenderName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TenderNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PaymentStatus" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ShouldResponseDate" Type="date" Nullable="false" />
+          <Property Name="MadeDate" Type="date" Nullable="false" />
+          <Property Name="RegistrationEndDate" Type="date" Nullable="false" />
+          <Property Name="RegistrationStartDate" Type="date" Nullable="false" />
+          <Property Name="RegistrationStartTime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RegistrationEndTime" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PaperAddItems">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Cid" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PaperId" Type="int" Nullable="false" />
+          <Property Name="Item" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Qty" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Pid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProcumentdTbl">
+          <Key>
+            <PropertyRef Name="PID" />
+          </Key>
+          <Property Name="PID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProcumentPlan">
+          <Key>
+            <PropertyRef Name="SerialNo" />
+          </Key>
+          <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PId" Type="int" />
+          <Property Name="Sheduledate" Type="date" Nullable="false" />
+          <Property Name="Remarks" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Qty" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="EstimatedUnitPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="EstimatetedTotalPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="CurrentStatusofProcumentPreparednessActivities" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LevelOfAuthority" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdentificationCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cid" Type="int" />
+          <Property Name="ProcumentMethod" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SourceOfFunding" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PriorityStatus" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ItemDescription" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QuatationLetter">
+          <Key>
+            <PropertyRef Name="QutationNo" />
+          </Key>
+          <Property Name="QutationNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SendAddress" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SendDate" Type="date" Nullable="false" />
+          <Property Name="ClosingDate" Type="date" Nullable="false" />
+          <Property Name="CompanyRegistrationNo" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Paperid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReqCategory">
+          <Key>
+            <PropertyRef Name="Cid" />
+          </Key>
+          <Property Name="Cid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Request">
+          <Key>
+            <PropertyRef Name="RequestId" />
+          </Key>
+          <Property Name="RequestId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdentificationCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Department" Type="varchar" MaxLength="50" />
+          <Property Name="RequisitionDate" Type="date" />
+          <Property Name="RequestPerson" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RequestItem">
+          <Key>
+            <PropertyRef Name="Itemid" />
+          </Key>
+          <Property Name="Itemid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Itemdescription" Type="varchar" MaxLength="100" />
+          <Property Name="ItemSpecification" Type="varchar" MaxLength="200" />
+          <Property Name="Quantity" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="EstimatePrice" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="ItemPhoto" Type="varchar" MaxLength="50" />
+          <Property Name="reqcid" Type="int" />
+          <Property Name="reqid" Type="int" />
+        </EntityType>
+        <EntityType Name="RequestPerson">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdentificationCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Post" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RequestPersonName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sections">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SectionName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="IdentificationCode" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SuppliesBranchModelStoreContainer">
+          <EntitySet Name="CategoryTbl" EntityType="Self.CategoryTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CompanyRegistraion" EntityType="Self.CompanyRegistraion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaperAdd" EntityType="Self.PaperAdd" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaperAddItems" EntityType="Self.PaperAddItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProcumentdTbl" EntityType="Self.ProcumentdTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProcumentPlan" EntityType="Self.ProcumentPlan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuatationLetter" EntityType="Self.QuatationLetter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReqCategory" EntityType="Self.ReqCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Request" EntityType="Self.Request" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RequestItem" EntityType="Self.RequestItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RequestPerson" EntityType="Self.RequestPerson" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sections" EntityType="Self.Sections" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SuppliesBranchModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CategoryTbl">
+          <Key>
+            <PropertyRef Name="Cid" />
+          </Key>
+          <Property Name="Cid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CompanyRegistraion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="PaperId" Type="Int32" Nullable="false" />
+          <Property Name="CompanyRegistrationNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Address" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RegistrationDate" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="PaperAdd">
+          <Key>
+            <PropertyRef Name="Paperid" />
+          </Key>
+          <Property Name="Heading" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cid" Type="Int32" Nullable="false" />
+          <Property Name="Paperid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenderName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenderNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PaymentStatus" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ShouldResponseDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="MadeDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="RegistrationEndDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="RegistrationStartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="RegistrationStartTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RegistrationEndTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PaperAddItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Cid" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PaperId" Type="Int32" Nullable="false" />
+          <Property Name="Item" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Qty" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Pid" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProcumentdTbl">
+          <Key>
+            <PropertyRef Name="PID" />
+          </Key>
+          <Property Name="PID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="ProcumentPlan">
+          <Key>
+            <PropertyRef Name="SerialNo" />
+          </Key>
+          <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PId" Type="Int32" />
+          <Property Name="Sheduledate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Remarks" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Qty" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="EstimatedUnitPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="EstimatetedTotalPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="CurrentStatusofProcumentPreparednessActivities" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LevelOfAuthority" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdentificationCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cid" Type="Int32" />
+          <Property Name="ProcumentMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SourceOfFunding" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PriorityStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ItemDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QuatationLetter">
+          <Key>
+            <PropertyRef Name="QutationNo" />
+          </Key>
+          <Property Name="QutationNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SendAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SendDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ClosingDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CompanyRegistrationNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Paperid" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReqCategory">
+          <Key>
+            <PropertyRef Name="Cid" />
+          </Key>
+          <Property Name="Cid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Request">
+          <Key>
+            <PropertyRef Name="RequestId" />
+          </Key>
+          <Property Name="RequestId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdentificationCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RequisitionDate" Type="DateTime" Precision="0" />
+          <Property Name="RequestPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RequestItem">
+          <Key>
+            <PropertyRef Name="Itemid" />
+          </Key>
+          <Property Name="Itemid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Itemdescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ItemSpecification" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Quantity" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EstimatePrice" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ItemPhoto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="reqcid" Type="Int32" />
+          <Property Name="reqid" Type="Int32" />
+        </EntityType>
+        <EntityType Name="RequestPerson">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdentificationCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Post" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RequestPersonName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Section">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SectionName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdentificationCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SuppliesBranchEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CategoryTbls" EntityType="Self.CategoryTbl" />
+          <EntitySet Name="CompanyRegistraions" EntityType="Self.CompanyRegistraion" />
+          <EntitySet Name="PaperAdds" EntityType="Self.PaperAdd" />
+          <EntitySet Name="PaperAddItems" EntityType="Self.PaperAddItem" />
+          <EntitySet Name="ProcumentdTbls" EntityType="Self.ProcumentdTbl" />
+          <EntitySet Name="ProcumentPlans" EntityType="Self.ProcumentPlan" />
+          <EntitySet Name="QuatationLetters" EntityType="Self.QuatationLetter" />
+          <EntitySet Name="ReqCategories" EntityType="Self.ReqCategory" />
+          <EntitySet Name="Requests" EntityType="Self.Request" />
+          <EntitySet Name="RequestItems" EntityType="Self.RequestItem" />
+          <EntitySet Name="RequestPersons" EntityType="Self.RequestPerson" />
+          <EntitySet Name="Sections" EntityType="Self.Section" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SuppliesBranchModelStoreContainer" CdmEntityContainer="SuppliesBranchEntities">
+          <EntitySetMapping Name="CategoryTbls">
+            <EntityTypeMapping TypeName="SuppliesBranchModel.CategoryTbl">
+              <MappingFragment StoreEntitySet="CategoryTbl">
+                <ScalarProperty Name="Cid" ColumnName="Cid" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompanyRegistraions">
+            <EntityTypeMapping TypeName="SuppliesBranchModel.CompanyRegistraion">
+              <MappingFragment StoreEntitySet="CompanyRegistraion">
+                <ScalarProperty Name="PaperId" ColumnName="PaperId" />
+                <ScalarProperty Name="CompanyRegistrationNo" ColumnName="CompanyRegistrationNo" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaperAdds">
+            <EntityTypeMapping TypeName="SuppliesBranchModel.PaperAdd">
+              <MappingFragment StoreEntitySet="PaperAdd">
+                <ScalarProperty Name="Heading" ColumnName="Heading" />
+                <ScalarProperty Name="Cid" ColumnName="Cid" />
+                <ScalarProperty Name="Paperid" ColumnName="Paperid" />
+                <ScalarProperty Name="TenderName" ColumnName="TenderName" />
+                <ScalarProperty Name="TenderNo" ColumnName="TenderNo" />
+                <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+                <ScalarProperty Name="ShouldResponseDate" ColumnName="ShouldResponseDate" />
+                <ScalarProperty Name="MadeDate" ColumnName="MadeDate" />
+                <ScalarProperty Name="RegistrationEndDate" ColumnName="RegistrationEndDate" />
+                <ScalarProperty Name="RegistrationStartDate" ColumnName="RegistrationStartDate" />
+                <ScalarProperty Name="RegistrationStartTime" ColumnName="RegistrationStartTime" />
+                <ScalarProperty Name="RegistrationEndTime" ColumnName="RegistrationEndTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaperAddItems">
+            <EntityTypeMapping TypeName="SuppliesBranchModel.PaperAddItem">
+              <MappingFragment StoreEntitySet="PaperAddItems">
+                <ScalarProperty Name="Cid" ColumnName="Cid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PaperId" ColumnName="PaperId" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Pid" ColumnName="Pid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProcumentdTbls">
+            <EntityTypeMapping TypeName="SuppliesBranchModel.ProcumentdTbl">
+              <MappingFragment StoreEntitySet="ProcumentdTbl">
+                <ScalarProperty Name="PID" ColumnName="PID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProcumentPlans">
+            <EntityTypeMapping TypeName="SuppliesBranchModel.ProcumentPlan">
+              <MappingFragment StoreEntitySet="ProcumentPlan">
+                <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+                <ScalarProperty Name="PId" ColumnName="PId" />
+                <ScalarProperty Name="Sheduledate" ColumnName="Sheduledate" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="EstimatedUnitPrice" ColumnName="EstimatedUnitPrice" />
+                <ScalarProperty Name="EstimatetedTotalPrice" ColumnName="EstimatetedTotalPrice" />
+                <ScalarProperty Name="CurrentStatusofProcumentPreparednessActivities" ColumnName="CurrentStatusofProcumentPreparednessActivities" />
+                <ScalarProperty Name="LevelOfAuthority" ColumnName="LevelOfAuthority" />
+                <ScalarProperty Name="IdentificationCode" ColumnName="IdentificationCode" />
+                <ScalarProperty Name="Cid" ColumnName="Cid" />
+                <ScalarProperty Name="ProcumentMethod" ColumnName="ProcumentMethod" />
+                <ScalarProperty Name="SourceOfFunding" ColumnName="SourceOfFunding" />
+                <ScalarProperty Name="PriorityStatus" ColumnName="PriorityStatus" />
+                <ScalarProperty Name="ItemDescription" ColumnName="ItemDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuatationLetters">
+            <EntityTypeMapping TypeName="SuppliesBranchModel.QuatationLetter">
+              <MappingFragment StoreEntitySet="QuatationLetter">
+                <ScalarProperty Name="QutationNo" ColumnName="QutationNo" />
+                <ScalarProperty Name="SendAddress" ColumnName="SendAddress" />
+                <ScalarProperty Name="SendDate" ColumnName="SendDate" />
+                <ScalarProperty Name="ClosingDate" ColumnName="ClosingDate" />
+                <ScalarProperty Name="CompanyRegistrationNo" ColumnName="CompanyRegistrationNo" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Paperid" ColumnName="Paperid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReqCategories">
+            <EntityTypeMapping TypeName="SuppliesBranchModel.ReqCategory">
+              <MappingFragment StoreEntitySet="ReqCategory">
+                <ScalarProperty Name="Cid" ColumnName="Cid" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Requests">
+            <EntityTypeMapping TypeName="SuppliesBranchModel.Request">
+              <MappingFragment StoreEntitySet="Request">
+                <ScalarProperty Name="RequestId" ColumnName="RequestId" />
+                <ScalarProperty Name="IdentificationCode" ColumnName="IdentificationCode" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="RequisitionDate" ColumnName="RequisitionDate" />
+                <ScalarProperty Name="RequestPerson" ColumnName="RequestPerson" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RequestItems">
+            <EntityTypeMapping TypeName="SuppliesBranchModel.RequestItem">
+              <MappingFragment StoreEntitySet="RequestItem">
+                <ScalarProperty Name="Itemid" ColumnName="Itemid" />
+                <ScalarProperty Name="Itemdescription" ColumnName="Itemdescription" />
+                <ScalarProperty Name="ItemSpecification" ColumnName="ItemSpecification" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="EstimatePrice" ColumnName="EstimatePrice" />
+                <ScalarProperty Name="ItemPhoto" ColumnName="ItemPhoto" />
+                <ScalarProperty Name="reqcid" ColumnName="reqcid" />
+                <ScalarProperty Name="reqid" ColumnName="reqid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RequestPersons">
+            <EntityTypeMapping TypeName="SuppliesBranchModel.RequestPerson">
+              <MappingFragment StoreEntitySet="RequestPerson">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdentificationCode" ColumnName="IdentificationCode" />
+                <ScalarProperty Name="Post" ColumnName="Post" />
+                <ScalarProperty Name="RequestPersonName" ColumnName="RequestPersonName" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sections">
+            <EntityTypeMapping TypeName="SuppliesBranchModel.Section">
+              <MappingFragment StoreEntitySet="Sections">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SectionName" ColumnName="SectionName" />
+                <ScalarProperty Name="IdentificationCode" ColumnName="IdentificationCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
